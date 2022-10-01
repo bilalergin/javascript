@@ -22,8 +22,8 @@ resim[0].style.height = "300px";
 resim[1].style.border = "3px solid red";
 
 
-//!============GET ELEMENT BY CLASSNAME/
-const baslık = document.getElementsByClassName("h1");
+//!============GET ELEMENT BY CLASSNAME/class adıyşla çağırma ama getelementbytagname gibi dizi şeklinde algılıyor
+const baslık = document.getElementsByClassName("H1");
 baslık[0].style.textAlign = "center";
 
 //!===============QUERY SELECTOR============
@@ -51,6 +51,7 @@ document.querySelector(".bir").onclick = function () {
     document.querySelector(".bir").src = "./img/logo2.png";
     document.querySelector(".iki").src = "./img/logo1.png";
 }
+
 
 
 
