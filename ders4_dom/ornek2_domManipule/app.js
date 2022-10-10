@@ -25,15 +25,44 @@ document.querySelector(".speak").onclick=function(){
 //5sonDiv.after(h1); //input divin sonrasına h1 ekliyoruz.
 
 //!yukarıdakini kısa yolu
-//ekle butonuna basıldığında yeni bir li ekle
+//?ekle butonuna basıldığında yeni bir li ekle
 const liste=document.querySelector(".liste");//silmede de kullandığımız için bu kodu başa alıyoruz
 document.querySelector(".ekle").onclick=function(){
     
-    const giris=document.querySelector(".dil");
-    liste.innerHTML=liste.innerHTML+`<li>${giris.value}</li>`;
-    giris.value="";
+    const giris=document.querySelector(".dil");//dil girişi yapılan input a ulaştık
+    liste.innerHTML=liste.innerHTML+`<li>${giris.value}</li>`;//listeye inputa girilen değerleri liste olarak ekledik
+    giris.value="";//inputa girilen değeri ekleyince inputtan silinmesi için 
 }
-//sil butonuna tıklandığında li elemanı silinsin
+//!sil butonuna tıklandığında li elemanı silinsin
+//sil butonuna ulaştık
 document.querySelector(".sil").onclick=function(){
-    liste.removeChild(liste.lastChild);
+    liste.removeChild(liste.lastElementChild);//listenin çocuklarından listenin son çocuğunu sildik
 }
+//indexte p class oluşturduk ve programa dillerini yazdık. css de de şekil verdik
+const parag=document.querySelector(".forH1");
+parag.innerHTML=`<h1>${"Programlama Dilleri"}</h1>`;
+
+//Klavyeden bir tuşa basıldığında büyüsün küçülsün
+document.querySelector(".textbox").onkeyup=function(){
+    const check=document.querySelector(".checkbox");
+    const text=document.querySelector(".textbox");
+    if(check.checked){
+        text.value=text.value.toUpperCase();
+    }else{
+        text.value=text.value.toLowerCase();
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ 
