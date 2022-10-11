@@ -25,7 +25,7 @@ document.querySelector(".speak").onclick=function(){
 //5sonDiv.after(h1); //input divin sonrasına h1 ekliyoruz.
 
 //!yukarıdakini kısa yolu
-//?ekle butonuna basıldığında yeni bir li ekle
+//!ekle butonuna basıldığında yeni bir li ekle
 const liste=document.querySelector(".liste");//silmede de kullandığımız için bu kodu başa alıyoruz
 document.querySelector(".ekle").onclick=function(){
     
@@ -42,7 +42,7 @@ document.querySelector(".sil").onclick=function(){
 const parag=document.querySelector(".forH1");
 parag.innerHTML=`<h1>${"Programlama Dilleri"}</h1>`;
 
-//Klavyeden bir tuşa basıldığında büyüsün küçülsün
+//!Klavyeden bir tuşa basıldığında büyüsün küçülsün
 document.querySelector(".textbox").onkeyup=function(){
     const check=document.querySelector(".checkbox");
     const text=document.querySelector(".textbox");
@@ -53,6 +53,38 @@ document.querySelector(".textbox").onkeyup=function(){
     }
 
 }
+
+//!mouse resmin üstüne geldiğinde aslan kükresin
+resim.onmouseover=function(){
+    resim.src="./img/aslan2.jpg";
+}
+
+// ?2. ama uzun yol addEventListener yolu.
+// resim.addEventListener("mouseover",function(){
+// resim.src="./img/aslan2.jpg";
+// })
+
+//!mouse resmin üstünden çekildiğinde diğer aslan gelsin
+resim.onmouseout=function(){
+    resim.src="./img/aslan1.jpg";
+}
+ //tuş kodları enter=13  delete=46
+ //onkeydown=klavyedeki tuşa basıp elinizi çektiğinizde tuş yazar
+ //onkeyup= klavyedeki tuşa basınca yazar
+ //enter e basınca ekle delete basınca sil
+
+ document.querySelector(".dil").onkeydown=function(klavye){
+    if(klavye.keyCode==13){//enter'ı çağırdık
+        document.querySelector(".ekle").onclick();
+
+    }if(klavye.keyCode==46){//delete'i çağırdık
+        document.querySelector(".sil").onclick();
+
+    }
+ }
+ 
+
+
 
 
 
